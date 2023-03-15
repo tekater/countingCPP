@@ -11,7 +11,7 @@ int main()
 
 	//system("color B5");
 
-
+        cout << "Задание 1\n\n";
 	char ASCII;
 	int sym;
 	cout << "Введите Букву или символ, цифру, знаки препинания и т.д\n";
@@ -30,4 +30,29 @@ int main()
 		cout << "Вы ввели Букву\n";
 	}
 	cout << sym;
+	
+	cout << "\nЗадание 2\n\n";
+	int Operator; int abonent; int cost = 0;
+	int time = 60;
+	cout << "Какой у вас оператор ?\n[1] - Билайн\n[2] - Мегафон\n[3] - МТС\n";
+	cin >> Operator;
+	cout << "Какой оператор у абонента ?\n[1] - Билайн\n[2] - Мегафон\n[3] - МТС\n";
+	cin >> abonent;
+	cout << "Сколько длился разговор ?\n";
+	cin >> time;
+	if (Operator == abonent) {
+		cout << "У вас одинаковый Оператор, звонок бесплатный\n";
+	}
+	if (Operator == 1 && abonent == 2 || Operator == 2 && abonent == 1) {
+		cost = time * 2;
+		cout << "Звонок обошёлся в " << cost << "руб";
+	}
+	if (Operator == 2 && abonent == 3 || Operator == 3 && abonent == 2) {
+		cost = time * 3;
+		cout << "Звонок обошёлся в " << cost << "руб";
+	}
+	if (Operator == 1 && abonent == 3 || Operator == 3 && abonent == 1) {
+		cost = time * 6;
+		cout << "Звонок обошёлся в " << cost << "руб";
+	}
 }

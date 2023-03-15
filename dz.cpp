@@ -53,4 +53,57 @@ int main()
 	}
 
 
+	cout << "\nЗадание 3\n\n";
+	int strok;
+	int choose;
+	int dohod = 0;
+	int opozdaniy;
+	int zp = 0;
+	cout << "Выберите вариант:\n[1] - Посчитать, сколько строк нужно написать.\n[2] - Посчитать, сколько раз Вася может опоздать.\n";
+	cout << "[3] - Посчитать, сколько денег заплатят Васе.\n";
+	cin >> choose;
+	switch (choose) {
+	case 1:
+		cout << "Введите желаемый доход Васи:\n";
+		cin >> dohod;
+		cout << "Введите сколько раз опоздал Вася:\n";
+		cin >> opozdaniy;
+		opozdaniy = opozdaniy / 3;
+		dohod = dohod + (opozdaniy * 20);
+		if ((dohod % 50) >= 1) {
+			strok = dohod / 50;
+			strok++;
+		}
+		else {
+			strok = dohod / 50;
+		}
+		strok = strok * 100;
+		cout << "Васе нужно написать " << strok << " Строчек.\n";
+		break;
+	case 2:
+		cout << "Введите количество строчек Васи:\n";
+		cin >> strok;
+		cout << "Введите желаемый доход Васи:\n";
+		cin >> dohod;
+		strok = strok / 100;
+		zp = strok * 50;
+		dohod = zp - dohod; 
+		opozdaniy = ((dohod / 20) * 3) + 2;
+		cout << "Вася может опоздать ещё " << opozdaniy << " раз.\n";
+		break;
+	case 3:
+		cout << "Введите количество строчек Васи:\n";
+		cin >> strok; // 1000
+		cout << "Введите сколько раз опоздал Вася:\n"; // 8
+		cin >> opozdaniy;
+		dohod = (strok / 100) * 50;
+		opozdaniy = (opozdaniy / 3) * 20;
+		dohod = dohod - opozdaniy;
+		if (dohod <= 0) {
+			cout << "Васе не заплатят\n";
+		}
+		else {
+			cout << "Васе заплатят " << dohod << " руб";
+		}
+	}
 }

@@ -8,16 +8,13 @@ using namespace std;
 int main()
 {
 	setlocale(0, "");
-
-	//system("color B5");
-
-        cout << "Задание 1\n\n";
+	cout << "Задание 1\n\n";
 	char ASCII;
 	int sym;
 	cout << "Введите Букву или символ, цифру, знаки препинания и т.д\n";
 	cin >> ASCII;
 	sym = (int)ASCII;
-	if (sym >= 33 && sym <= 43|| sym == 45 || sym == 47 || sym >= 60 && sym <= 64 || sym >= 91 && sym <= 96 || sym >= 123 && sym <= 126) {
+	if (sym >= 33 && sym <= 43 || sym == 45 || sym == 47 || sym >= 60 && sym <= 64 || sym >= 91 && sym <= 96 || sym >= 123 && sym <= 126) {
 		cout << "Вы ввели символ\n";
 	}
 	if (sym == 44 || sym == 45 || sym == 46 || sym == 58 || sym == 59) {
@@ -29,8 +26,7 @@ int main()
 	if (sym >= 65 && sym <= 90 || sym >= 97 && sym <= 122) {
 		cout << "Вы ввели Букву\n";
 	}
-	cout << sym;
-	
+
 	cout << "\nЗадание 2\n\n";
 	int Operator; int abonent; int cost = 0;
 	int time = 60;
@@ -38,7 +34,7 @@ int main()
 	cin >> Operator;
 	cout << "Какой оператор у абонента ?\n[1] - Билайн\n[2] - Мегафон\n[3] - МТС\n";
 	cin >> abonent;
-	cout << "Сколько длился разговор ?\n";
+	cout << "Сколько минут длился разговор ?\n";
 	cin >> time;
 	if (Operator == abonent) {
 		cout << "У вас одинаковый Оператор, звонок бесплатный\n";
@@ -55,4 +51,6 @@ int main()
 		cost = time * 6;
 		cout << "Звонок обошёлся в " << cost << "руб";
 	}
+
+
 }
